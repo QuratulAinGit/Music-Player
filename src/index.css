@@ -1,0 +1,69 @@
+:root {
+  --bg: #241a35;
+  --bg-raised: #2f2246;
+  --panel: #382a52;
+  --panel-line: #4a3968;
+  --gold: #e8b85c;
+  --gold-soft: #f2d9a3;
+  --cream: #f4ede1;
+  --muted: #a99bc4;
+  --muted-dim: #79688f;
+  --coral: #e2725b;
+  --sage: #7fa88f;
+  --shadow: rgba(10, 6, 20, 0.55);
+  --sidebar-bg: #1c1428;
+  --stage-bg: #241a35;
+
+  --font-display: "Space Grotesk", "Arial", sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(
+      circle at 20% 0%,
+      rgba(232, 184, 92, 0.08),
+      transparent 45%
+    ),
+    radial-gradient(circle at 90% 100%, rgba(226, 114, 91, 0.08), transparent 50%);
+  color: var(--cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--bg);
+}

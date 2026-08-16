@@ -1,0 +1,54 @@
+.visualizer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.visualizer span {
+  flex: 1;
+  max-width: 5px;
+  border-radius: 2px;
+  background: linear-gradient(to top, var(--gold), var(--coral));
+  height: 4px;
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.visualizer--active span {
+  opacity: 1;
+  animation: bar-bounce 1.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.06s);
+}
+
+@keyframes bar-bounce {
+  0%,
+  100% {
+    height: 4px;
+  }
+  50% {
+    height: var(--peak, 32px);
+  }
+}
+
+.visualizer span:nth-child(3n) {
+  --peak: 40px;
+}
+
+.visualizer span:nth-child(4n) {
+  --peak: 22px;
+}
+
+.visualizer span:nth-child(5n) {
+  --peak: 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visualizer--active span {
+    animation: none;
+    height: 16px;
+  }
+}
